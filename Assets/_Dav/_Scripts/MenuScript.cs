@@ -69,7 +69,30 @@ namespace Dav
 
         public void Login()
         {
-            GameManager.instance.ShowPopup("Not Implemented Yet");
+            if (string.IsNullOrEmpty(loginEmail.text) || string.IsNullOrWhiteSpace(loginEmail.text))
+            {
+                GameManager.instance.ShowPopup("Enter Valid Email");
+                return;
+            }
+            if (string.IsNullOrEmpty(loginPassword.text) || string.IsNullOrWhiteSpace(loginPassword.text))
+            {
+                GameManager.instance.ShowPopup("Enter Valid Password");
+                return;
+            }
+            var request = new LoginWithEmailAddressRequest()
+            {
+                Email = loginEmail.text,
+                Password = loginPassword.text
+            };
+
+            GameManager.instance.ShowLoadingPanel();
+            PlayFabClientAPI.LoginWithEmailAddress(request, LogInSuccess, OnError);
+        }
+
+        private void LogInSuccess(LoginResult obj)
+        {
+            GameManager.instance.ShowPopup("Login Successfull");
+            GameManager.instance.HideLoadingPanel();
         }
 
 
