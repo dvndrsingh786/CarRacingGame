@@ -8,7 +8,7 @@ using System;
 
 namespace Dav
 {
-    public class MenuScript : MonoBehaviour
+    public class LoginScript : MonoBehaviour
     {
         [Header("Signup Objects")]
         [SerializeField] GameObject signupPanel;
@@ -93,19 +93,6 @@ namespace Dav
         {
             GameManager.instance.ShowPopup("Login Successfull");
             GameManager.instance.HideLoadingPanel();
-        }
-
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }
