@@ -2,8 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuScript : MonoBehaviour
+namespace Dav
 {
-    public GameObject[] carsObjects;
-    public int currentSelectedCarIndex;
+    public class MenuScript : MonoBehaviour
+    {
+        public GameObject[] carsObjects;
+        public Transform[] carPositions;
+        public int currentSelectedCarIndex;
+
+        private void Start()
+        {
+            currentSelectedCarIndex = PlayerData.instance.selectedCarIndex;
+        }
+
+        void SetCarWithIndex()
+        {
+
+        }
+
+    }
 }

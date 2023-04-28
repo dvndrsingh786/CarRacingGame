@@ -51,16 +51,9 @@ namespace Dav
 
         #endregion
 
-        // Start is called before the first frame update
-        void Start()
+        public void SavePlayerData()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            PlayerData.instance = PlayerData.instance;
         }
     }
 }
